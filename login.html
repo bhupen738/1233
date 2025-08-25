@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Janata Boarding School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: "Segoe UI", Arial, sans-serif; margin:0; padding:0; background:#f4f8fb; color:#333; }
+    h1,h2 { margin:0; }
+    header { background:#004080; color:white; padding:20px; text-align:center; }
+    nav { background:#0066cc; padding:12px; text-align:center; }
+    nav a { color:white; margin:0 18px; font-weight:bold; font-size:16px; transition:color 0.3s; }
+    nav a:hover, nav a.active { color:#ffd700; }
+    .hero { text-align:center; padding:80px 20px; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('register-banner.jpg') no-repeat center center/cover; color:#fff; }
+    .hero h1 { font-size:38px; margin-bottom:10px; }
+    .hero p { font-size:18px; }
+    .register-section { max-width:450px; margin:50px auto; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+    .register-section h2 { text-align:center; color:#004080; margin-bottom:25px; }
+    .register-section form { display:flex; flex-direction:column; }
+    .register-section input, .register-section select { padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:8px; font-size:14px; }
+    .register-section button { padding:12px; border:none; border-radius:8px; background:#004080; color:white; font-weight:bold; cursor:pointer; transition:background 0.3s; }
+    .register-section button:hover { background:#0066cc; }
+    .register-section p { text-align:center; margin-top:15px; font-size:14px; }
+    .register-section a { color:#004080; text-decoration:none; font-weight:bold; }
+    .register-section a:hover { color:#0066cc; }
+    footer { background:#004080; color:white; text-align:center; padding:25px 15px; margin-top:40px; }
+    footer .social a { margin:0 10px; color:white; font-size:22px; display:inline-block; transition:transform 0.3s, color 0.3s; }
+    footer .social a:hover { color:#ffd700; transform:scale(1.2); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Janata Boarding School</h1>
+  <p>Kamalamai, Sindhuli</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="teachers.html">Teachers</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="notice.html">Notices</a>
+  <a href="contact.html">Contact</a>
+  <a href="register.html" class="active">Register</a>
+</nav>
+
+<section class="hero">
+  <h1>Create Your Account</h1>
+  <p>Register as a student or teacher to access your account.</p>
+</section>
+
+<section class="register-section">
+  <h2>Register</h2>
+  <form id="registerForm">
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <select name="role" required>
+      <option value="">Select Role</option>
+      <option value="Student">Student</option>
+      <option value="Teacher">Teacher</option>
+    </select>
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="login.html">Login here</a></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+  <div class="social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('registerForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const fullname = this.fullname.value.trim();
+    const email = this.email.value.trim();
+    const password = this.password.value;
+    const role = this.role.value;
+
+    if(!fullname || !email || !password || !role){
+      alert("Please fill in all fields!");
+      return;
+    }
+
+    // Get users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Check if email already exists
+    if(users.find(u => u.email === email)){
+      alert("Email already registered! Try logging in.");
+      return;
+    }
+
+    // Add new user
+    users.push({ fullname, email, password, role });
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert("Registration successful! You can now log in.");
+    window.location.href = "login.html";
+  });
+</script>
+
+</body>
+</html>

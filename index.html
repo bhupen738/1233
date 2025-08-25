@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janata Boarding School - Home</title>
+
+  <!-- Font Awesome for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Global */
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f8fb;
+      color: #333;
+    }
+    h1, h2, h3 { margin: 0; }
+    a { text-decoration: none; }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 24px; }
+
+    /* Navbar */
+    nav {
+      background: #0066cc;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active { color: #ffd700; }
+
+    /* Hero */
+    .hero {
+      background: url("school-banner.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    /* Section */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      flex: 1 1 300px;
+      max-width: 320px;
+    }
+    .card h3 { color: #004080; }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer .social {
+      margin-top: 10px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .social a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 28px; }
+      nav a { margin: 0 10px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Janata Boarding School</h1>
+    <p>Kamalamai, Sindhuli</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="notice.html">Notices</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to Janata Boarding School</h2>
+    <p>“Quality education for a brighter tomorrow.”</p>
+  </section>
+
+  <!-- About Section -->
+  <section>
+    <h2>About Us</h2>
+    <p>Janata Boarding School is dedicated to fostering academic excellence, discipline, and holistic development in students. Our aim is to build future leaders with strong values and knowledge.</p>
+  </section>
+
+  <!-- Leadership Section -->
+  <section>
+    <h2>Our Leadership</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Principal</h3>
+        <p><b>Mr. Tulsi Dhakal</b></p>
+      </div>
+      <div class="card">
+        <h3>Vice Principal</h3>
+        <p><b>Mr. Ram Prasad Thapa</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
